@@ -27,3 +27,7 @@ caddy +
     github.com/sagikazarmark/caddy-fs-s3
     github.com/greenpau/caddy-security
 ```
+
+TODO:
+
+if `docker run -it caddy:builder go version` > `1.24`, remove `GOTOOLCHAIN=go1.24.1` from all Dockerfile

@@ -1,6 +1,6 @@
 FROM caddy:builder AS builder
 
-RUN HTTP_PROXY=$PROXY_URL HTTPS_PROXY=$PROXY_URL xcaddy build \
+RUN HTTP_PROXY=$PROXY_URL HTTPS_PROXY=$PROXY_URL GOTOOLCHAIN=go1.24.1 xcaddy build \
     --with github.com/caddy-dns/acmedns \
     --with github.com/caddy-dns/alidns \
     --with github.com/caddy-dns/cloudflare \

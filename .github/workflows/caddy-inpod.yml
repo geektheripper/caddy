@@ -4,8 +4,8 @@ on:
   push:
     branches: ["main"]
     paths:
-      - Dockerfile
-      - .github/workflows/caddy.yml
+      - Dockerfile.inpod
+      - .github/workflows/caddy-inpod.yml
 jobs:
   build-image:
     runs-on: ubuntu-latest
@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./
-          file: ./Dockerfile
+          file: ./Dockerfile.inpod
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest,ghcr.io/${{ github.repository }}:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository }}/caddy-inpod:latest,ghcr.io/${{ github.repository }}/caddy-inpod:${{ github.sha }}

@@ -1,0 +1,11 @@
+FROM caddy:builder AS builder
+
+RUN HTTP_PROXY=$PROXY_URL HTTPS_PROXY=$PROXY_URL xcaddy build \
+    --with github.com/mholt/caddy-l4 \
+    --with github.com/mohammed90/caddy-git-fs \
+    --with github.com/sagikazarmark/caddy-fs-s3 \
+    --with github.com/greenpau/caddy-security
+
+FROM caddy
+
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy

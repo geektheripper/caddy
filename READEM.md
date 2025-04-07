@@ -6,12 +6,14 @@ Common Image:
 
 ```
 caddy +
-    github.com/mholt/caddy-l4
+    github.com/caddy-dns/acmedns
     github.com/caddy-dns/alidns
     github.com/caddy-dns/cloudflare
-    github.com/caddy-dns/route53
     github.com/caddy-dns/powerdns
+    github.com/caddy-dns/route53
     github.com/gerolf-vent/caddy-vault-storage
+    github.com/geektheripper/caddy-fs-s3
+    github.com/mholt/caddy-l4
 ```
 
 Inpod Image:
@@ -24,7 +26,7 @@ used in kubernetes behind ingress
 caddy +
     github.com/mholt/caddy-l4
     github.com/mohammed90/caddy-git-fs
-    github.com/sagikazarmark/caddy-fs-s3
+    github.com/geektheripper/caddy-fs-s3
     github.com/greenpau/caddy-security
 ```
 
